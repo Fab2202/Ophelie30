@@ -1,0 +1,117 @@
+
+
+{% extends "base.html" %}
+
+{% block title %}ESVT 2026{% endblock %}
+
+{% block extra_styles %}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.gallery a {
+  display: block;
+  width: 150px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  text-align: center;
+  text-decoration: none;
+  background-color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: relative;
+  padding-bottom: 30px; /* space for checkbox */
+}
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.gallery a:hover img {
+  transform: scale(1.1);
+}
+/* Checkbox container positioned at the bottom center of the photo */
+.checkbox-label {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Select all container */
+.select-all-container {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* Download button */
+.download-button {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #047edd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+.download-button:hover {
+  background-color: #035bb5;
+}
+{% endblock %}
+
+{% block content %}
+
+
+<h1>H</h1>
+<h1>Photos 2023-2026 Gallery</h1>
+
+<form method="POST" action="{{ url_for('download_photos') }}">
+  
+  <div class="select-all-container">
+    <label>
+      <input type="checkbox" id="select-all" /> Select All
+    </label>
+  </div>
+
+  <div class="gallery">
+    {% for photo in photos %}
+    <a href="{{ url_for('photo2023_2026_detail', filename=photo.filename) }}" title="{{ photo.alt }}">
+      <img src="{{ url_for('static', filename='images/photos2023_2026/' ~ photo.filename) }}" alt="{{ photo.alt }}">
+        <label class="checkbox-label">
+          <input type="checkbox" name="selected_photos" value="{{ photo.filename }}" class="photo-checkbox" />
+          Select
+        </label>
+      </a>
+    {% else %}
+      <p>No photos found.</p>
+    {% endfor %}
+  </div>
+
+  <button type="submit" class="download-button">Download Selected</button>
+
+</form>
+
+<script>
+  // Toggle all checkboxes when "Select All" is clicked
+  document.getElementById('select-all').addEventListener('change', function () {
+    const checked = this.checked;
+    document.querySelectorAll('.photo-checkbox').forEach(cb => cb.checked = checked);
+  });
+</script>
+
+
+
+{% endblock %}

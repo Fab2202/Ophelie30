@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Photo View</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; text-align: center; }
+    img {
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    a.back-link {
+      display: inline-block;
+      margin-top: 15px;
+      text-decoration: none;
+      color: #007BFF;
+      font-weight: bold;
+    }
+    a.back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<img src="{{ img_url }}" alt="Photo" />
+<br />
+<a href="{{ back_url }}" class="back-link">&larr; Back to gallery</a>
+
+</body>
+</html>

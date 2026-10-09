@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}ESVT 2026{% endblock %}
+
+{% block extra_styles %}
+.welcome-img {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+{% endblock %}
+
+{% block content %}
+<main>
+    <h1>H</h1>
+    <h1>WELCOME TO OPHELIE'S 30 YEARS HOME PAGE </h1>
+    
+    <div class="welcome-img">
+        <img src="{{ url_for('static', filename='images/welcome.jpg') }}" alt="Welcome Image" class="welcome-img">
+    </div>
+    <div class="welcome-img">
+        <p>Homepage. Use navigation bar.</p>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,402 @@
+
+{% extends "base.html" %}
+
+{% block title %}ESVT 2026{% endblock %}
+
+{% block extra_styles %}
+
+.article { margin-bottom: 30px; display: flex; align-items: flex-start; gap: 15px; justify-content: center;}
+.article div.date {
+    max-width: 100px;
+}
+.article img {
+      max-width: 300px;
+      height: auto;
+      border-radius: 8px;
+}
+.article div.content {
+      max-width: 670px;
+}
+.article h2 { margin-top: 0; margin-bottom: 5px; color: rgb(5, 29,53);}
+.article h3 { margin-top: 0; margin-bottom: 3px; color: rgb(5, 29,53);}
+.article p { margin-top: 0; }
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<main>
+    <h1>H</h1>
+    <h1>Latest News</h1>
+
+    <div class=article>
+        <div class=date><h3>Sep 21, 2026</h2></div>
+        <img src="{{ url_for('static', filename='images/TASA-TASB.jpg') }}" alt="News 8 image">
+        <div class="content">
+            <h2>ESVT 2026 Cannes - TAS Cannes Champion</h2>
+            <p> <h3>Here is the result list</h3><br>
+            <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 900px; margin: 20px auto;">
+            <thead>
+                <tr>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for text1, text2 in zipped_texts2 %}
+            <tr>
+                <td>{{ loop.index0 * 2 + 1 }}</td>
+                <td>{{ text1 }}</td>
+                <td>{{ loop.index0 * 2 + 2 }}</td>
+                <td>{{ text2 }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+            </table><br>
+            <h4>The TASF organization team 🎉🏐</h4><br>
+                
+            </p>
+        </div>
+    </div>
+
+
+    <div class=article>
+        <div class=date><h3>Sep 11, 2026</h2></div>
+        <img src="{{ url_for('static', filename='images/important.jpg') }}" alt="News 7 image">
+        <div class="content">
+            <h2>Things to remember</h2>
+            <p> <h3>Dear Space Volleyball players</h3><br>
+
+On saturday morning, you will be welcomed at the gymnasium area entrance from 8AM (debrief in gymnasium at 8:30, match start at 9:00) and will receive a bag per team where will be placed (per player) :<br>
+-🥛1 eco-cup for any drinking on site (water, soft, beer)<br>
+-📿1 bracelet valid for gymnasium area entrance (saturday & sunday), and for Waikiki entrance (saturday evening)<br>
+              (the bracelet is a light paper material that will not hinder to play volley ball) <br>
+-🎟 1 blue ticket for saturday lunch (the lunch meal will be to pick-up per team from 12:00, with all tickets; special food restriction will be indicated on each ticket)<br>
+-🎫3 drink tickets for saturday evening in Waikiki (food being free picking, the added drinks without ticket will be payable in Waikiki, 10€ for standard, 15€ for super alcoholic)<br>
+-🧧1 red ticket for sunday lunch (the lunch meal will be to pick-up individually, with individual tickets)<br><br>
+
+Please note that :<br>
+- 🏐Bring your volleyball balls for the warm-up; we will provide pumps to inflate them<br>
+- 🍺There will be free snacks, fruits, soft drinks, beers and coffees in the gymnasium<br>
+- ⛔️The gymnasium is a private area, without public access : all access must be declared before coming (naturally done for all players)<br>
+- 📿The bracelet is used for access limitation into the gymnasium area and in Waikiki<br>
+- 🚻Changing rooms are small : please keep your bags with you<br>
+- 🚀There will be warm-up & stretching areas, separated from the gymnasium; but no ball can be used in these areas<br>
+- 🥪Lunches will be taken on the tables outside the gymnasium<br>
+- 🍌No food is allowed inside the gymnasium<br><br>
+
+
+            <h4>The TASF organization team 🎉🏐</h4><br>
+                
+            </p>
+        </div>
+    </div>
+
+
+    <div class=article>
+        <div class=date><h3>Aug 24, 2026</h2></div>
+        <img src="{{ url_for('static', filename='images/register_now.jpg') }}" alt="News 7 image">
+        <div class="content">
+            <h2>ESVT 2026 - Registration</h2>
+            <p> <h3>🏐🏐 Dear Space Volleyball players, 🏐🏐</h3><br>
+
+            ⏰⏰ Only one month left !! 🤪 The best tournament of the year is fast approaching !!!  ⏰⏰<br><br>
+
+            ✅  💪💪  Thank you to all the teams that have already provided the necessary information <br>
+            and paid their registration fees 👏👏.✅<br><br>
+
+            ❌ For those who haven't done so yet, please do not delay, as this disturbs the organization <br>
+            and the booking of the final suppliers.🤯🤯❌<br>
+
+            <h4>The TASF organization team 🎉🏐</h4><br>
+                
+            </p>
+        </div>
+    </div>
+
+    <div class=article>
+        <div class=date><h3>Jun 10, 2026</h2></div>
+        <img src="{{ url_for('static', filename='images/teamlist.jpg') }}" alt="News 8 image">
+        <div class="content">
+            <h2>Team List</h2>
+            <p> <h3>Here is the final list of teams</h3><br>
+            We are waiting for the complete list of players and all associated details by June 15th. <br>
+            <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 900px; margin: 20px auto;">
+            <thead>
+                <tr>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for text1, text2 in zipped_texts %}
+            <tr>
+                <td>{{ loop.index0 * 2 + 1 }}</td>
+                <td>{{ text1 }}</td>
+                <td>{{ loop.index0 * 2 + 2 }}</td>
+                <td>{{ text2 }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+            </table><br>
+            <h4>The TASF organization team 🎉🏐</h4><br>
+
+            </p>
+        </div>
+    </div>
+
+
+    <div class=article>
+        <div class=date><h3>Jun 5, 2026</h2></div>
+        <img src="{{ url_for('static', filename='images/Waikiki.jpg') }}" alt="News 7 image">
+        <div class="content">
+            <h2>ESVT 2026 Party</h2>
+            <p> <h3>An Unforgettable Evening at Waikiki Beach, Cannes – September 19th</h3><br>
+				The ESVT party will take place at the legendary <b>Waikiki Beach</b> on Boulevard du Midi in Cannes on September 19, 2026.
+				This event promises a magical experience in one of the region's most sought-after locations.<br><br>
+
+				Nestled between the Esterel Massif and the sparkling, crystal-clear Mediterranean Sea, Waikiki Beach offers breathtaking views of the <b>Lérins Islands</b> shimmering on the horizon.<br>
+				Just steps from <b>Le Suquet</b> and the vibrant center of Cannes, this idyllic setting combines elegance and relaxation in true Riviera style.<br><br>
+
+				As the sun sets and the Esterel Massif rises in the background with its glowing red rocks, you will enjoy both an exceptional setting and a relaxed atmosphere.<br><br>
+
+				This evening offers the opportunity to share special moments with all the teams and enjoy the timeless charm of Cannes, all within the intimacy of a private setting.<br><br>
+
+				For the most adventurous, watching the sunrise over the Croisette before a 5km run to the gymnasium to be ready for the finals will cap off an extraordinary evening.<br><br>
+
+                <h4>The TASF organization team 🎉🏐</h4><br>
+                
+            </p>
+        </div>
+    </div>
+    <div class=article>
+        <div class=date><h3>Apr 27, 2026</h2></div>
+        <img src="{{ url_for('static', filename='images/teamlist.jpg') }}" alt="News 6 image">
+        <div class="content">
+            <h2>Team List</h2>
+            <p> <h3>Here is the final list of teams that will make up the ESVT 2026 tournament</h3><br>
+			<table>
+				<tr>
+					<td>1</td>
+					<td>Thales Alenia Space Cannes A</td>
+					<td><img img src="{{ url_for('static', filename='images/fr.png') }}" alt="French Flag" class="lang-icon" /></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Thales Alenia Space Cannes B</td>
+					<td><img src="{{ url_for('static', filename='images/fr.png') }}" alt="French Flag" class="lang-icon" /></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>OHB</td>
+					<td><img src="{{ url_for('static', filename='images/de.png') }}" alt="German Flag" class="lang-icon" /></td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>ESOC</td>
+					<td><img src="{{ url_for('static', filename='images/de.png') }}" alt="German Flag" class="lang-icon" /></td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>CNES Toulouse</td>
+					<td><img img src="{{ url_for('static', filename='images/fr.png') }}" alt="French Flag" class="lang-icon" /></td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>Thales Alenia Space Spain</td>
+					<td><img src="{{ url_for('static', filename='images/sp.png') }}" alt="Spain Flag" class="lang-icon" /></td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>AVIO spa</td>
+					<td><img src="{{ url_for('static', filename='images/it.png') }}" alt="Italian Flag" class="lang-icon" /></td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>HEMERIA</td>
+					<td><img src="{{ url_for('static', filename='images/fr.png') }}" alt="French Flag" class="lang-icon" /></td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>GMV</td>
+					<td><img src="{{ url_for('static', filename='images/sp.png') }}" alt="Spain Flag" class="lang-icon" /></td>
+				</tr>
+				<tr>
+					<td>10</td>
+					<td>HDEMIA Frascalli</td>
+					<td><img src="{{ url_for('static', filename='images/it.png') }}" alt="Italian Flag" class="lang-icon" /></td>
+				</tr>
+				<tr>
+					<td>11</td>
+					<td>ESTEC</td>
+					<td><img src="{{ url_for('static', filename='images/ne.png') }}" alt="Netherlands Flag" class="lang-icon" /></td>
+				</tr>
+				<tr>
+					<td>12</td>
+					<td>AIRBUS DS Toulouse</td>
+					<td><img src="{{ url_for('static', filename='images/fr.png') }}" alt="French Flag" class="lang-icon" /></td>
+				</tr>
+				<tr>
+					<td>13</td>
+					<td>Thales Alenia Space Torino</td>
+					<td><img src="{{ url_for('static', filename='images/it.png') }}" alt="Italian Flag" class="lang-icon" /></td>
+				</tr>
+				<tr>
+					<td>14</td>
+					<td>DLR</td>
+					<td><img src="{{ url_for('static', filename='images/de.png') }}" alt="Geramn Flag" class="lang-icon" /></td>
+				</tr>
+				<tr>
+					<td>15</td>
+					<td>TAITUS TITANS</td>
+					<td><img src="{{ url_for('static', filename='images/da.png') }}" alt="Denmark Flag" class="lang-icon" /></td>
+				</tr>
+				<tr>
+					<td>16</td>
+					<td>ISAR AEROPSACE</td>
+					<td><img src="{{ url_for('static', filename='images/de.png') }}" alt="German Flag" class="lang-icon" /></td>
+				</tr>
+				<tr>
+					<td>17</td>
+					<td>Hybrid Propulsion For Space</td>
+					<td><img src="{{ url_for('static', filename='images/fr.png') }}" alt="French Flag" class="lang-icon" /></td>
+				</tr>
+				<tr>
+					<td>18</td>
+					<td>INDRA DEMIOS</td>
+					<td><img src="{{ url_for('static', filename='images/sp.png') }}" alt="Spain Flag" class="lang-icon" /></td>
+				</tr>
+			</table>
+            </p>
+        </div>
+    </div>
+
+    <div class=article>
+        <div class=date><h3>Apr 22, 2026</h2></div>
+        <img src="{{ url_for('static', filename='images/pancarte_booked.jpg') }}" alt="News 5 image">
+        <div class="content">
+            <h2>Team Inscription</h2>
+            <p> <h3>Dear Space Volleyball players</h3><br>
+				Registrations are closed. We have reached the maximum number of teams.<br><br>
+				For registered teams, feel free to regularly check the website for important information such as accommodations, organization, parties, etc.<br><br>
+
+                <h4>The TASF organization team 🎉🏐</h4><br>
+                
+            </p>
+        </div>
+    </div>
+    <div class=article>
+        <div class=date><h3>Mar 24, 2026</h2></div>
+        <img src="{{ url_for('static', filename='images/welcome.jpg') }}" alt="News 4 image">
+        <div class="content">
+            <h2>Team Inscription</h2>
+            <p> <h3>Dear Space Volleyball players</h3><br>
+                We are glad to announce that the 2026 edition of the ESVT in Cannes (France) has officially started to be planned and you are all invited!!!<br><br>
+
+                We include in this news web page some information useful for you, we will update with more details once we have more information:<br>
+                🗓️ WHEN: The event will take place by the weekend of the (18)/19/20 of September 2026.<br>
+                🏐 TEAMS: a maximum of 18 teams will be accepted, considering a max of 2 teams per country/company if feasible. A minimum of two girls on the court (except for the libero).<br>
+                🛌 STAY:  (more information in following communication, check the website regularly )<br>
+                🕺 SIDE EVENTS: Optional Friday evening. The big event will take place on Saturday evening in Cannes to have dinner and dance until the sun rises!<br>
+                💬 CONTACTS: casvb06@gmail.com<br><br>
+                
+                Please feel free to ask if you need more information!<br><br>
+                Looking forward to seeing you all and playing and partying together in September!!<br><br>
+                <h4>The TASF organization team 🎉🏐</h4><br>
+                
+            </p>
+        </div>
+    </div>
+
+    <div class=article>
+        <div class=date><h3>Feb 25, 2026</h2></div>
+        <img src="{{ url_for('static', filename='images/ESVT.jpg') }}" alt="News 3 image">
+        <div class="content">
+            <h2>EUROPEAN SPACE VOLLEYBALL TOURNAMENT 2026</h2>
+            <p> <h3>Ready to play?</h3><br>
+                <img src="{{ url_for('static', filename='images/fr.png') }}" 
+                         alt="French Flag" 
+                         class="lang-icon" />
+                Le tournoi se déroulera du samedi 19 au dimanche 20 septembre à Cannes.<br><br>
+                <img src="{{ url_for('static', filename='images/uk.png') }}" 
+                         alt="English Flag" 
+                         class="lang-icon" />
+                The tournament will take place from Saturday 19 to Sunday 20 September in Cannes.<br><br>
+                <img src="{{ url_for('static', filename='images/it.png') }}" 
+                         alt="Italian Flag" 
+                         class="lang-icon" />
+                Il torneo si svolgerà da sabato 19 a domenica 20 settembre a Cannes.<br><br>
+                <img src="{{ url_for('static', filename='images/sp.png') }}" 
+                         alt="Spain Flag" 
+                         class="lang-icon" />
+                El torneo tendrá lugar del sábado 19 al domingo 20 de septiembre en Cannes.<br><br>
+                <img src="{{ url_for('static', filename='images/de.png') }}" 
+                         alt="Deusch Flag" 
+                         class="lang-icon" />
+                Das Turnier findet von Samstag, 19. bis Sonntag, 20. September in Cannes statt.<br><br>
+                <img src="{{ url_for('static', filename='images/ne.png') }}" 
+                         alt="Netherlands Flag" 
+                         class="lang-icon" />
+                Het toernooi vindt plaats van zaterdag 19 tot zondag 20 september in Cannes.<br><br>
+                <img src="{{ url_for('static', filename='images/da.png') }}" 
+                         alt="Denmark Flag" 
+                         class="lang-icon" />
+                Turneringen finder sted fra lørdag den 19. Til søndag den 20. September i Cannes.
+            </p>
+        </div>
+    </div>
+
+    <div class=article>
+        <div class=date><h3>Dec 1, 2025</h2></div>
+        <img src="{{ url_for('static', filename='images/CannesSoleilArticle.jpg') }}" alt="News 3 image">
+        <div class="content">
+            <h2>ARTICLE CANNES SOLEIL - THALES ALENIA SPACE REMPORTE L'EUROPEAN SPACE VOLLEYBALL TOURNAMENT 2025</h2>
+            <p> Sur le toit de l'Europe, les volleyeurs cannois touchent les étoiles! Organisée depuis 2012 par l'Agence Spatiale Européenne (ESA), 
+                l'European Space Volleyball Tournament oppose chaque année les formations de volley des plus grandes entreprises et institutions 
+                européennes du secteur spatial. Cette édition 2025, remportée donc par Thales Alenia Space Cannes, s'est tenue du 19 au 21 septembre 
+                dernier à Madrid et a regroupé dix-sept autres équipes, parmi lesquelles celles de l'Agence Spatiale Européenne, du CNES, d'Airbus 
+                Defense and Space ou encore de l'Europe Satellite Operation Center. La société cannoise, qui était également représentée sur place 
+                par ses antennes madrilène et turinoise, a remporté en Espagne son deuxième titre consécutif, après l'édition 2024 organisée à 
+                Toulouse par le CNES. « C'était une expérience sportive riche en échanges et en sourires, qui montre que l'esprit d'entreprise 
+                peut aussi vivre sur un terrain de sport, a déclaré Jean-Michel Gaucel, ingénieur et... volleyeur chez Thales Alenia Space. 
+                Nous donnons maintenant rendez-vous à tout le monde l'an prochain à Cannes pour écrire un nouveau chapitre!» En effet, alors 
+                que la compétition n'y a jamais été organisée, l'édition 2026 de l'European Space Volleyball Tournament se tiendra le troisième 
+                week-end de septembre dans notre ville. 
+                Une ville habituée aux plus grands succès du Volley mais d'ores et déjà prête à en accueillir de nouveaux.
+                </p>
+        </div>
+    </div>
+    <div class=article>
+        <div class=date><h3>Sep 24, 2025</h2></div>
+        <img src="{{ url_for('static', filename='images/news1.jpg') }}" alt="News 1 image">
+        <div class="content">
+            <h2>ESVT 2025 TRES CANTOS - TAS Cannes à nouveau Champion</h2>
+            <p> Après notre victoire pour notre 1ere participation au tournoi ESVT édition 2024 de l’année dernière, notre équipe a une nouvelle fois remporté le tournoi cette année.
+                Cette édition 2025, organisée par la société GMV, nous a fait retrouver des équipes de l’année dernière (ADS, OHB, CNES, GMV…) mais aussi en connaitre de nouvelles (TAS-Turin, Indra Deimos, Taitus …).
+                La finale nous a opposé à nos collègues de TAS-Turin.
+                Le tournoi fut très bien organisé par GMV qui nous a reçus dans la petite ville de Tres Cantos (proche de Madrid) et a permis de réaliser l’ensemble des 2 jours de compétition ainsi que les 2 repas du midi (finissant le dimanche par une délicieuse Paella !). BRAVO à eux !
+                Merci cette année à nos supporters Patricia et Marc, et aux super joueurs : Giulia, Juhaina, Charlène, Jean-Michel, Fabrice, Rémi, Fabien, Nicolas S et Nico R !
+                </p>
+        </div>
+    </div>
+    <div class=article>
+        <div class=date><h3>Sep 23, 2024</h2></div>
+        <img src="{{ url_for('static', filename='images/news2.jpg') }}" alt="News 2 image">
+        <div class="content">
+            <h2>ESVT 2024 Toulouse - TAS Cannes Champion</h2>
+            <p>C’est lors du WE dernier que notre équipe de volley de TAS Cannes s’est grandement fait remarquer par sa victoire au tournoi ESVT édition 2024 : European Space Volleyball Tournament.
+               Pour notre 1ere participation au tournoi, aux termes de 2 jours de compétitions, nous nous sommes classés 1er face à 18 équipes du spatial Européen représentant environ 200 joueurs : ADS, OHB, ESA, CNES, HEMERIA …etc.
+               Pour cette finale, nous étions opposés à …. ADS …et nous avons remporté le « contrat » 2 sets à 0. Les spécialistes y verront peut être un signe prémonitoire ! Cette édition 2024 fut remarquablement bien organisée par le CNES qui nous a reçus dans ses locaux de Toulouse et a permis de réaliser l’ensemble de la compétition ainsi que les 2 repas du midi (finissant le dimanche par un véritable Aligot de l’Aubrac!).
+               BRAVO à eux ! Merci cette année à notre accompagnant Marc, et aux super joueurs : Giulia, Carole, Charlène, Jean-Michel, Fabrice, Rémi, Fabien, Nicolas S et Nico R !</p>
+        </div>
+    </div>
+    <!-- Add more news articles with images similarly -->
+
+</main>
+{% endblock %}

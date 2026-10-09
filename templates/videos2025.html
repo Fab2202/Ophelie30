@@ -1,0 +1,108 @@
+
+
+{% extends "base.html" %}
+
+{% block title %}welcome Section{% endblock %}
+
+{% block extra_styles %}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.gallery a {
+  display: block;
+  width: 150px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  text-align: center;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: relative;
+  padding-bottom: 30px; /* space for checkbox */
+}
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.gallery a:hover img {
+  transform: scale(1.1);
+}
+/* Checkbox container positioned at the bottom center of the photo */
+.checkbox-label {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Select all container */
+.select-all-container {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* Download button */
+.download-button {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #047edd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+.download-button:hover {
+  background-color: #035bb5;
+}
+{% endblock %}
+
+{% block content %}
+
+
+<h1>H</h1>
+<h1>Videos 2025 Gallery</h1>
+
+<form method="POST" action="{{ url_for('download_videos2025') }}">
+  <div>
+    {% for video in videos %}
+      <div style="display:inline-block; margin:10px; text-align:center;">
+        <video width="200" height="150" controls>
+          <source src="{{ url_for('static', filename='videos/videos2025/' ~ video) }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <br />
+        <input type="checkbox" name="videos" value="{{ video }}" id="video_{{ loop.index }}">
+        <label for="video_{{ loop.index }}">{{ video }}</label>
+      </div>
+    {% endfor %}
+  </div>
+  <button type="submit">Download Selected Videos</button>
+</form>
+
+
+<script>
+  // Toggle all checkboxes when "Select All" is clicked
+  document.getElementById('select-all').addEventListener('change', function () {
+    const checked = this.checked;
+    document.querySelectorAll('.photo-checkbox').forEach(cb => cb.checked = checked);
+  });
+</script>
+
+
+
+{% endblock %}
