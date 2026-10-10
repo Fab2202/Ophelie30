@@ -94,13 +94,13 @@
 
 <div id="comments">
   {% if entries %}
-    {% for id, author, message, created_at in entries %}
+    {% for author, message, created_at in entries %}
       <div class="comment">
         <div class="date">{{ created_at.strftime('%d/%m/%Y %H:%M') }}</div>
         <div class="author">{{ author }} a écrit :</div>
         <div class="message">{{ message | e | replace('\n', '<br>') | safe }}</div>
 
-        <form method="POST" action="{{ url_for('delete_message', message_id=id) }}" style="display:inline;">
+        <form method="POST" action="{{ url_for('delete_message', message_id=1) }}" style="display:inline;">
           <input type="submit" value="Supprimer" onclick="return confirm('Confirmer la suppression ?');"/>
         </form>
       </div>
