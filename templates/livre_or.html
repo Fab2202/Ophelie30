@@ -1,31 +1,4 @@
 
-
-{% extends "base.html" %}
-
-{% block title %}OPHELIE 30{% endblock %}
-
-{% block extra_styles %}
-
-.article { margin-bottom: 30px; display: flex; align-items: flex-start; gap: 15px; justify-content: center;}
-.article div.date {
-    max-width: 100px;
-}
-.article img {
-      max-width: 300px;
-      height: auto;
-      border-radius: 8px;
-}
-.article div.content {
-      max-width: 670px;
-}
-.article h2 { margin-top: 0; margin-bottom: 5px; color: rgb(5, 29,53);}
-.article h3 { margin-top: 0; margin-bottom: 3px; color: rgb(5, 29,53);}
-.article p { margin-top: 0; }
-
-{% endblock %}
-
-{% block content %}
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -91,7 +64,6 @@
 </head>
 <body>
 
-<h1>h</h1>
 <h1>GUEST BOOK - OPHELIE 30 YEARS</h1>
 
 <form method="POST" action="{{ url_for('livre_or') }}">
@@ -143,5 +115,3 @@
 
 </body>
 </html>
-
-{% endblock %}
