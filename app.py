@@ -66,8 +66,8 @@ if _DEBUG == 0:
 
         conn = get_db_connection()
         cur = conn.cursor()
-        cur.execute('SELECT author, message, created_at FROM guestbook ORDER BY created_at DESC')
-        # FRR-1010/2026: cur.execute('SELECT id, author, message, created_at FROM guestbook ORDER BY created_at DESC')
+        # FRR-1010/2026: cur.execute('SELECT author, message, created_at FROM guestbook ORDER BY created_at DESC')
+        cur.execute('SELECT id, author, message, created_at FROM guestbook ORDER BY created_at DESC')
         entries = cur.fetchall()
         cur.close()
         conn.close()
