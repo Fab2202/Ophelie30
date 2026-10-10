@@ -104,22 +104,6 @@
     <input type="submit" value="Send" />
 </form>
 
-<!-- FRR-10/10/2026 
-<div id="comments">
-  {% if entries %}
-    {% for author, message, created_at in entries %}
-      <div class="comment">
-        <div class="date">{{ created_at.strftime('%d/%m/%Y %H:%M') }}</div>
-        <div class="author">{{ author }} a écrit :</div>
-        <div class="message">{{ message | e | replace('\n', '<br>') | safe }}</div>
-      </div>
-    {% endfor %}
-  {% else %}
-    <p>Aucun message pour l'instant, soyez le premier !</p>
-  {% endif %}
-</div>
--->
-
 <div id="comments">
   {% if entries %}
     {% for id, author, message, created_at in entries %}
