@@ -112,7 +112,7 @@
         <div class="author">{{ author }} a écrit :</div>
         <div class="message">{{ message | e | replace('\n', '<br>') | safe }}</div>
 
-        <form method="POST" action="{{ url_for('delete_message', message_id=3) }}" style="display:inline;">
+        <form method="POST" action="{{ url_for('delete_message', message_id=id) }}" style="display:inline;">
           <input type="submit" value="Supprimer" onclick="return confirm('Confirmer la suppression ?');"/>
         </form>
       </div>
