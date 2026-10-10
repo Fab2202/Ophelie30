@@ -66,7 +66,8 @@ if _DEBUG == 0:
 
         conn = get_db_connection()
         cur = conn.cursor()
-        cur.execute('SELECT author, message, created_at FROM guestbook ORDER BY created_at DESC')
+        # FRR-1010/2026: cur.execute('SELECT author, message, created_at FROM guestbook ORDER BY created_at DESC')
+        cur.execute('SELECT id, author, message, created_at FROM guestbook ORDER BY created_at DESC')
         entries = cur.fetchall()
         cur.close()
         conn.close()
@@ -82,6 +83,15 @@ else:
         #return render_template('contact.html')
         return render_template('livre_or.html')
 
+@app.route('/delete_message/<int:message_id>', methods=['POST'])
+def delete_message(message_id):
+    conn = get_db_connection()
+    cur = conn.cursor()
+    cur.execute('DELETE FROM guestbook WHERE id = %s', (message_id,))
+    conn.commit()
+    cur.close()
+    conn.close()
+    return redirect(url_for('livre_or'))
 
 @app.route('/photos')
 def photos():
