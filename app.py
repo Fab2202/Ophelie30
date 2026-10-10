@@ -26,7 +26,6 @@ if _DEBUG == 0:
 
     # Connexion à la base PostgreSQL (Scalingo met DATABASE_URL dans l'environnement)
     DATABASE_URL = os.environ.get('DATABASE_URL')
-    DATABASE_URL = os.environ.get('SCALINGO_POSTGRESQL_URL')
 
     def get_db_connection():
         conn = psycopg2.connect(DATABASE_URL)
@@ -67,8 +66,8 @@ if _DEBUG == 0:
 
         conn = get_db_connection()
         cur = conn.cursor()
-        # FRR-1010/2026: cur.execute('SELECT author, message, created_at FROM guestbook ORDER BY created_at DESC')
-        cur.execute('SELECT id, author, message, created_at FROM guestbook ORDER BY created_at DESC')
+        cur.execute('SELECT author, message, created_at FROM guestbook ORDER BY created_at DESC')
+        # FRR-1010/2026: cur.execute('SELECT id, author, message, created_at FROM guestbook ORDER BY created_at DESC')
         entries = cur.fetchall()
         cur.close()
         conn.close()
