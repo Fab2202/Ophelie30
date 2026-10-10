@@ -5,8 +5,8 @@ from flask import Flask, render_template, request, send_file, redirect, url_for,
 import io
 import zipfile
 import os
-_DEBUG = 0
-if _DEBUG == 0:
+_DEBUG = False
+if not _DEBUG:
     import psycopg2
 
 app = Flask(__name__)
@@ -22,7 +22,7 @@ def index():
     
     return render_template('index.html')
 
-if _DEBUG == 0:
+if not _DEBUG:
 
     # Connexion à la base PostgreSQL (Scalingo met DATABASE_URL dans l'environnement)
     DATABASE_URL = os.environ.get('DATABASE_URL')
