@@ -1,0 +1,13 @@
+ouvrir une cmd dans website_ophelie
+
+faire git branch
+
+si dans main ok sinon git switch main
+
+git status 
+
+git add ..
+
+git commit -m ""
+
+git push --set-upstream origin main
